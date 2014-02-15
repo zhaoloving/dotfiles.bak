@@ -10,9 +10,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+alias ls='ls -G'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias ee='exit'
 
 
 # Mark trick
@@ -36,3 +38,5 @@ tm() {
   [[ -z "$1" ]] && { echo "usage: tm <session>" >&2; return 1; }
   tmux has -t $1 && tmux attach -t $1 || tmux new -s $1
 }
+
+source ~/zhaoloving/pyenv/bin/activate
